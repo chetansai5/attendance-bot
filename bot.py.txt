@@ -1,0 +1,14 @@
+from telegram import Update
+from telegram.ext import Application, CommandHandler, ContextTypes
+
+# ←←←←← PUT YOUR REAL TOKEN HERE
+TOKEN = "8531734735:AAGExLeuUq8RlEosmn6S0WBEu1lAVxx_vG4"
+
+async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    await update.message.reply_text("YES BRO!! BOT IS FINALLY WORKING 100% 🔥🔥🔥\nProject complete in 5 minutes!")
+
+app = Application.builder().token(TOKEN).build()
+app.add_handler(CommandHandler("start", start))
+
+print("Bot running - type /start in Telegram")
+app.run_polling()
